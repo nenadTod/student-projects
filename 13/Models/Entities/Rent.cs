@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace RentApp.Models.Entities
+{
+    public class Rent
+    {
+        public int Id { get; set; }
+        public DateTime? Start { get; set; }
+        public DateTime? End { get; set; }
+
+        public int GetBranchId { get; set; }
+
+       // [ForeignKey("GetBranchId")]
+        public Branch GetBranch { get; set; }
+
+        public int RetBranchId { get; set; }
+
+       // [ForeignKey("RetBranchId")]
+        public Branch RetBranch { get; set; }
+
+        public int VehicleId { get; set; }
+
+       // [ForeignKey("VehicleId")]
+        public Vehicle Vehicle { get; set; }
+
+        public bool Deleted { get; set; }
+    }
+}
